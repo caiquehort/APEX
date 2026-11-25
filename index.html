@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APEX Training Center — Pedra Branca</title>
+<meta name="description" content="Jiu-Jitsu, Muay Thai, Krav Magá e Taekwondo na Pedra Branca, Palhoça/SC. Turmas mistas e femininas. Monte seu treino e fale com a APEX pelo WhatsApp.">
+<meta property="og:title" content="APEX Training Center — Reach your apex.">
+<meta property="og:description" content="Jiu-Jitsu, Muay Thai, Krav Magá e Taekwondo na Pedra Branca, Palhoça/SC.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B0B0B;color:#F4F4F2;font-family:'Archivo',sans-serif;overflow-x:hidden}
+a{color:#F4F4F2}a:hover{color:#B8B8B4}
+.page{width:100%;overflow-x:clip}
+.wrap{max-width:1280px;margin:0 auto;padding:104px 32px}
+.wide{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-0.01em}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.sec-title{margin:0;font-size:clamp(36px,5vw,64px);line-height:0.95}
+.kicker{font-size:13px;font-weight:600;letter-spacing:0.3em;color:#A3A3A0}
+.light{background:#F4F4F2;color:#0B0B0B}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(11,11,11,0.94);border-bottom:1px solid #222;backdrop-filter:blur(6px)}
+.nav{max-width:1280px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{text-decoration:none;display:flex;flex-direction:column;line-height:1}
+.logo small{font-size:9px;letter-spacing:0.45em;color:#A3A3A0;margin-top:4px}
+.navlinks{display:flex;gap:28px;font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase}
+.navlinks a{text-decoration:none}
+
+/* buttons */
+.btn{display:inline-block;text-decoration:none;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border-radius:999px;white-space:nowrap;transition:all .15s}
+.btn-solid{background:#F4F4F2;color:#0B0B0B;border:1px solid #F4F4F2}
+.btn-solid:hover{background:#D6D6D2;color:#0B0B0B}
+.btn-ghost{border:1px solid #F4F4F2;color:#F4F4F2}
+.btn-ghost:hover{background:#F4F4F2;color:#0B0B0B}
+.btn-nav{font-size:14px;padding:14px 22px}
+.btn-lg{font-size:15px;padding:18px 28px}
+
+/* hero */
+#topo{border-bottom:1px solid #222}
+.hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;padding-top:96px;padding-bottom:88px}
+.hero-text{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.hero h1{margin:0;font-size:clamp(48px,7vw,104px);line-height:0.92}
+.hero p{margin:0;font-size:19px;line-height:1.55;color:#C9C9C5;max-width:520px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.heroimg{flex:1 1 420px;min-width:0;height:560px;position:relative;background:#1C1C1B;border:1px solid #2E2E2C;display:flex;align-items:flex-end;padding:24px;overflow:hidden}
+.heroimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.heroimg .tagline{position:relative;font-size:15px;letter-spacing:0.12em}
+.ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#6E6E6B;font-size:13px;letter-spacing:0.2em;text-align:center;padding:16px}
+
+/* modalidades */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:2px;background:#0B0B0B;border:2px solid #0B0B0B}
+.card{background:#F4F4F2;padding:32px;display:flex;flex-direction:column;gap:14px;min-height:240px}
+.card .tag{font-size:12px;font-weight:700;letter-spacing:0.25em;color:#5A5A57}
+.card h3{margin:0;font-size:26px;line-height:1}
+.card p{margin:0;font-size:16px;line-height:1.55;color:#3D3D3B;flex-grow:1}
+
+/* chips */
+.chip{min-height:44px;cursor:pointer;font:600 15px 'Archivo',sans-serif;border-radius:999px;padding:10px 18px;transition:all .15s;background:transparent;color:#F4F4F2;border:1px solid #3A3A38}
+.chip:hover{border-color:#F4F4F2}
+.chip.on{background:#F4F4F2;color:#0B0B0B;border-color:#F4F4F2}
+.chip.dark{background:#0B0B0B;color:#F4F4F2;border-color:#0B0B0B;align-self:flex-start}
+.chip.dark:hover{background:#2A2A28}
+
+/* ambiente */
+#ambiente{border-bottom:1px solid #222}
+.amb-right{display:flex;align-items:center;gap:20px}
+.amb-right p{margin:0;font-size:17px;line-height:1.55;color:#C9C9C5}
+.arrows{display:flex;gap:10px}
+.arrow{width:48px;height:48px;border-radius:999px;border:1px solid #F4F4F2;background:transparent;color:#F4F4F2;font-size:20px;cursor:pointer}
+.arrow:hover{background:#F4F4F2;color:#0B0B0B}
+.carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;scrollbar-width:none}
+.carousel::-webkit-scrollbar{display:none}
+.tile{flex:0 0 min(70%,620px);height:440px;scroll-snap-align:start;position:relative;background:#1C1C1B;border:1px solid #2E2E2C;overflow:hidden}
+.tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);display:block}
+
+/* horários */
+.grids{display:flex;flex-wrap:wrap;gap:32px}
+.grid{flex:1 1 480px;min-width:0;border:2px solid #0B0B0B}
+.grid-head{background:#0B0B0B;color:#F4F4F2;padding:20px 24px}
+.grid-head h3{margin:0;font-size:22px}
+.row{display:flex;flex-wrap:wrap;gap:12px;padding:16px 24px;border-top:1px solid #D0D0CC}
+.row .day{flex:0 0 110px;font-weight:700;font-size:14px;letter-spacing:0.1em;text-transform:uppercase}
+.row .times{flex:1 1 240px;font-size:15px;line-height:1.7;color:#2A2A28;white-space:pre-line}
+
+/* formulário */
+.form-wrap{display:flex;flex-wrap:wrap;gap:56px}
+.form-intro{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.form-intro p{margin:0;font-size:17px;line-height:1.6;color:#C9C9C5}
+.preview{margin-top:12px;border:1px solid #2E2E2C;padding:24px;display:flex;flex-direction:column;gap:10px}
+.preview span{font-size:12px;font-weight:700;letter-spacing:0.25em;color:#A3A3A0}
+.preview p{color:#F4F4F2;font-size:15px;white-space:pre-line}
+.form{flex:1.4 1 520px;min-width:0;display:flex;flex-direction:column;gap:36px}
+.step{display:flex;flex-direction:column;gap:14px}
+.step-label{font-size:13px;font-weight:700;letter-spacing:0.2em}
+.step-hint{font-size:14px;color:#A3A3A0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+#nome{min-height:52px;background:#151514;border:1px solid #3A3A38;color:#F4F4F2;font:16px 'Archivo',sans-serif;padding:14px 18px;border-radius:12px}
+#nome:focus{outline:2px solid #F4F4F2;outline-offset:2px}
+.send{display:block;text-align:center;font-weight:800;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;padding:22px 28px;border-radius:999px;text-decoration:none;background:#F4F4F2;color:#0B0B0B}
+.send:hover{background:#D6D6D2;color:#0B0B0B}
+.send.disabled{background:#2A2A28;color:#8E8E8A;pointer-events:none;cursor:not-allowed}
+.missing{font-size:14px;color:#A3A3A0;text-align:center;margin:-24px 0 0}
+
+/* rodapé */
+footer{background:#000;border-top:1px solid #222}
+.foot{max-width:1280px;margin:0 auto;padding:56px 32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start}
+.foot-col{display:flex;flex-direction:column;gap:10px;font-size:15px;color:#C9C9C5}
+.foot-col .label{font-size:12px;font-weight:700;letter-spacing:0.25em;color:#A3A3A0}
+
+@media (max-width:760px){
+  .navlinks,.arrows{display:none}
+  .nav{padding:12px 20px}
+  .btn-nav{padding:10px 16px;font-size:12px}
+  .wrap{padding:64px 20px}
+  .hero{padding-top:56px;padding-bottom:56px;gap:32px}
+  .heroimg{height:300px}
+  .tile{height:300px;flex-basis:85%}
+  .form-wrap{gap:40px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#topo" aria-label="APEX Training Center, início">
+      <span class="wide" style="font-size:28px">APEX</span>
+      <small>TRAINING CENTER</small>
+    </a>
+    <nav class="navlinks">
+      <a href="#modalidades">Modalidades</a>
+      <a href="#ambiente">Ambiente</a>
+      <a href="#horarios">Horários</a>
+    </nav>
+    <a class="btn btn-solid btn-nav" href="#agendar">Quero treinar</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="topo">
+  <div class="wrap hero">
+    <div class="hero-text">
+      <span class="kicker">PEDRA BRANCA · PALHOÇA/SC</span>
+      <h1 class="wide">Reach your apex.</h1>
+      <p>Jiu-Jitsu, Muay Thai, Krav Magá e Taekwondo em um só lugar. Turmas mistas e femininas, para quem nunca treinou e para quem já está no tatame há anos.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid btn-lg" href="#agendar">Montar meu treino</a>
+        <a class="btn btn-ghost btn-lg" href="#horarios">Ver horários</a>
+      </div>
+    </div>
+    <div class="heroimg">
+      <!-- Troque pelo caminho da foto: <img src="fotos/hero.jpg" alt="Treino no tatame da APEX"> -->
+      <span class="ph">[FOTO P&amp;B — TREINO NO TATAME]</span>
+      <span class="wide tagline">Jiu-Jitsu · Muay Thai · Krav Magá · Taekwondo</span>
+    </div>
+  </div>
+</section>
+
+<!-- MODALIDADES -->
+<section id="modalidades" class="light">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:48px">
+    <div class="sec-head">
+      <h2 class="wide sec-title">Modalidades</h2>
+      <p style="margin:0;max-width:440px;font-size:17px;line-height:1.55;color:#3D3D3B">Escolha uma arte marcial ou combine mais de uma. Toda turma recebe iniciantes.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<!-- AMBIENTE -->
+<section id="ambiente">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:48px">
+    <div class="sec-head">
+      <h2 class="wide sec-title">O ambiente</h2>
+      <div class="amb-right">
+        <p>Conheça o espaço antes do primeiro treino. Arraste para ver mais.</p>
+        <div class="arrows">
+          <button class="arrow" id="prev" aria-label="Foto anterior">←</button>
+          <button class="arrow" id="next" aria-label="Próxima foto">→</button>
+        </div>
+      </div>
+    </div>
+    <!-- Para cada foto, troque o <span class="ph"> por: <img src="fotos/tatame.jpg" alt="Tatame principal"> -->
+    <div class="carousel" id="carousel">
+      <div class="tile"><span class="ph">[FOTO — TATAME PRINCIPAL]</span></div>
+      <div class="tile"><span class="ph">[FOTO — ÁREA DOS SACOS]</span></div>
+      <div class="tile"><span class="ph">[FOTO — AULA DE MUAY THAI]</span></div>
+      <div class="tile"><span class="ph">[FOTO — AULA DE JIU-JITSU]</span></div>
+      <div class="tile"><span class="ph">[FOTO — FACHADA / RECEPÇÃO]</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HORÁRIOS -->
+<section id="horarios" class="light">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
+    <div class="sec-head">
+      <h2 class="wide sec-title">Horários</h2>
+      <p style="margin:0;max-width:460px;font-size:17px;line-height:1.55;color:#3D3D3B">Grade adulto. Horários das turmas femininas, Krav Magá e Taekwondo: [CONSULTAR / INSERIR GRADE].</p>
+    </div>
+    <div class="grids" id="grids"></div>
+  </div>
+</section>
+
+<!-- FORMULÁRIO -->
+<section id="agendar">
+  <div class="wrap form-wrap">
+    <div class="form-intro">
+      <span class="kicker">COMECE AGORA</span>
+      <h2 class="wide" style="margin:0;font-size:clamp(36px,5vw,60px);line-height:0.95">Monte seu treino</h2>
+      <p>Escolha a modalidade, os dias e horários que encaixam na sua rotina e o seu nível. A gente monta a mensagem e você envia direto no WhatsApp da APEX.</p>
+      <div class="preview">
+        <span>PRÉVIA DA MENSAGEM</span>
+        <p id="preview"></p>
+      </div>
+    </div>
+    <form class="form" id="form" onsubmit="return false">
+      <div class="step">
+        <span class="step-label">1 · MODALIDADE</span>
+        <div class="chips" id="mods"></div>
+      </div>
+      <div class="step">
+        <span class="step-label">2 · DIAS DISPONÍVEIS</span>
+        <div class="chips" id="days"></div>
+      </div>
+      <div class="step">
+        <span class="step-label">3 · HORÁRIOS</span>
+        <span class="step-hint" id="slotHint"></span>
+        <div class="chips" id="slots"></div>
+      </div>
+      <div class="step">
+        <span class="step-label">4 · NÍVEL DE PRÁTICA</span>
+        <div class="chips" id="levels"></div>
+      </div>
+      <div class="step" style="gap:10px">
+        <label class="step-label" for="nome">5 · SEU NOME</label>
+        <input id="nome" type="text" placeholder="Como podemos te chamar?" autocomplete="given-name">
+      </div>
+      <a class="send disabled" id="send" href="#" target="_blank" rel="noopener" aria-disabled="true">Enviar no WhatsApp</a>
+      <p class="missing" id="missing"></p>
+    </form>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="foot">
+    <div class="foot-col" style="line-height:1;gap:8px">
+      <span class="wide" style="font-size:36px;color:#F4F4F2">APEX</span>
+      <span style="font-size:10px;letter-spacing:0.45em;color:#A3A3A0">TRAINING CENTER</span>
+      <span style="margin-top:14px">Reach your apex.</span>
+    </div>
+    <div class="foot-col">
+      <span class="label">ONDE ESTAMOS</span>
+      <span>[ENDEREÇO] — Pedra Branca, Palhoça/SC</span>
+    </div>
+    <div class="foot-col">
+      <span class="label">CONTATO</span>
+      <a href="https://wa.me/5548999523353" target="_blank" rel="noopener">WhatsApp (48) 99952-3353</a>
+      <a href="https://www.instagram.com/apexpedrabranca/" target="_blank" rel="noopener">@apexpedrabranca</a>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+(function () {
+  // ===== CONFIGURAÇÃO =====
+  var WHATSAPP = '5548999523353'; // número da escola, só dígitos com DDI 55
+
+  var DAYS = [['seg','Segunda'],['ter','Terça'],['qua','Quarta'],['qui','Quinta'],['sex','Sexta'],['sab','Sábado']];
+  var MT = { seg:['08:00–09:00','16:45–17:45','19:45–20:45'], ter:['08:00–09:00','17:00–18:00','21:00–22:00'], qua:['08:00–09:00','16:45–17:45','19:45–20:45'], qui:['08:00–09:00','17:00–18:00','21:00–22:00'], sex:['08:00–09:00','16:45–17:45','19:45–20:45'], sab:['11:00–13:00 · Open Mat'] };
+  var JJ = { seg:['07:00–08:00 · Kimono','12:30–13:30 · Kimono','20:15–21:15 · Kimono'], ter:['19:15–20:30 · Kimono'], qua:['07:00–08:00 · Kimono','12:30–13:30 · Kimono','20:15–21:15 · No-Gi'], qui:['19:15–20:30 · Kimono'], sex:['07:00–08:00 · No-Gi','12:30–13:30 · No-Gi','19:15–20:15 · No-Gi'], sab:['10:00–13:00 · Open Mat'] };
+  // Para incluir a grade de uma turma, troque "sched:null" por um objeto no mesmo formato de MT/JJ.
+  var MODS = [
+    { id:'jj',   name:'Jiu-Jitsu Misto',    short:'Jiu-Jitsu', tag:'MISTO',          sched:JJ,   desc:'Treinos com e sem kimono (No-Gi), técnica de solo, quedas e Open Mat aos sábados.' },
+    { id:'jjf',  name:'Jiu-Jitsu Feminino', short:'Jiu-Jitsu', tag:'FEMININO',       sched:null, desc:'Turma exclusiva para mulheres, com o mesmo método e um ambiente pensado para elas.' },
+    { id:'mt',   name:'Muay Thai Misto',    short:'Muay Thai', tag:'MISTO',          sched:MT,   desc:'A arte das oito armas: socos, chutes, joelhadas, cotoveladas e clinch. Condicionamento de verdade.' },
+    { id:'mtf',  name:'Muay Thai Feminino', short:'Muay Thai', tag:'FEMININO',       sched:null, desc:'Turma exclusiva para mulheres, do básico do Muay Thai ao trabalho de sacos e manoplas.' },
+    { id:'krav', name:'Krav Magá',          short:'Krav Magá', tag:'DEFESA PESSOAL', sched:null, desc:'Sistema de defesa pessoal focado em situações reais, reação rápida e técnicas diretas.' },
+    { id:'tkd',  name:'Taekwondo',          short:'Taekwondo', tag:'ARTE MARCIAL',   sched:null, desc:'Arte marcial coreana de chutes rápidos e precisos, com disciplina, flexibilidade e graduação.' }
+  ];
+  var GRIDS = [ { title:'Muay Thai Adulto', sched:MT }, { title:'Jiu-Jitsu Adulto', sched:JJ } ];
+  var LEVELS = ['Nunca treinei','Iniciante','Intermediário','Avançado'];
+
+  var S = { mod:null, days:[], slots:[], level:null, name:'' };
+  var $ = function (id) { return document.getElementById(id); };
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function toggle(arr, v) { return arr.indexOf(v) >= 0 ? arr.filter(function (x) { return x !== v; }) : arr.concat([v]); }
+  function dayName(k) { for (var i = 0; i < DAYS.length; i++) if (DAYS[i][0] === k) return DAYS[i][1]; return k; }
+  function chip(label, on, onClick) { var b = el('button', 'chip' + (on ? ' on' : ''), label); b.type = 'button'; b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.onclick = onClick; return b; }
+  function currentMod() { for (var i = 0; i < MODS.length; i++) if (MODS[i].id === S.mod) return MODS[i]; return null; }
+
+  // Cartões de modalidades
+  MODS.forEach(function (m) {
+    var c = el('div', 'card');
+    c.appendChild(el('span', 'tag', m.tag));
+    c.appendChild(el('h3', 'wide', m.name));
+    c.appendChild(el('p', null, m.desc));
+    var b = el('button', 'chip dark', 'Quero treinar ' + m.short); b.type = 'button';
+    b.onclick = function () { S.mod = m.id; S.slots = []; render(); $('agendar').scrollIntoView({ behavior: 'smooth' }); };
+    c.appendChild(b);
+    $('cards').appendChild(c);
+  });
+
+  // Grades de horários
+  GRIDS.forEach(function (g) {
+    var box = el('div', 'grid');
+    var head = el('div', 'grid-head'); head.appendChild(el('h3', 'wide', g.title)); box.appendChild(head);
+    DAYS.forEach(function (d) {
+      if (!g.sched[d[0]]) return;
+      var r = el('div', 'row');
+      r.appendChild(el('span', 'day', d[1]));
+      r.appendChild(el('span', 'times', g.sched[d[0]].join('\n')));
+      box.appendChild(r);
+    });
+    $('grids').appendChild(box);
+  });
+
+  // Carrossel
+  var car = $('carousel');
+  $('prev').onclick = function () { car.scrollBy({ left: -car.clientWidth * 0.7, behavior: 'smooth' }); };
+  $('next').onclick = function () { car.scrollBy({ left: car.clientWidth * 0.7, behavior: 'smooth' }); };
+
+  $('nome').addEventListener('input', function (e) { S.name = e.target.value; renderMessage(); });
+
+  function slotList() {
+    var mod = currentMod(), list = [];
+    if (!mod || !S.days.length) return list;
+    if (mod.sched) {
+      DAYS.forEach(function (d) {
+        if (S.days.indexOf(d[0]) < 0) return;
+        (mod.sched[d[0]] || []).forEach(function (t) { list.push({ key: d[0] + '|' + t, label: d[1].slice(0, 3) + ' · ' + t }); });
+      });
+    } else {
+      ['Manhã','Tarde','Noite'].forEach(function (p) { list.push({ key: p, label: p }); });
+    }
+    return list;
+  }
+
+  function render() {
+    var mod = currentMod();
+    var mods = $('mods'); mods.innerHTML = '';
+    MODS.forEach(function (m) { mods.appendChild(chip(m.name, S.mod === m.id, function () { S.mod = m.id; S.slots = []; render(); })); });
+
+    var days = $('days'); days.innerHTML = '';
+    DAYS.forEach(function (d) { days.appendChild(chip(d[1], S.days.indexOf(d[0]) >= 0, function () { S.days = toggle(S.days, d[0]); render(); })); });
+
+    var list = slotList(), keys = list.map(function (s) { return s.key; });
+    S.slots = S.slots.filter(function (k) { return keys.indexOf(k) >= 0; });
+    $('slotHint').textContent = !mod || !S.days.length ? 'Escolha a modalidade e os dias para ver os horários.'
+      : mod.sched ? 'Toque nos horários que funcionam para você.'
+      : 'Grade desta turma confirmada pelo WhatsApp. Qual período prefere?';
+    var slots = $('slots'); slots.innerHTML = '';
+    list.forEach(function (s) { slots.appendChild(chip(s.label, S.slots.indexOf(s.key) >= 0, function () { S.slots = toggle(S.slots, s.key); render(); })); });
+
+    var levels = $('levels'); levels.innerHTML = '';
+    LEVELS.forEach(function (l) { levels.appendChild(chip(l, S.level === l, function () { S.level = l; render(); })); });
+
+    renderMessage();
+  }
+
+  function renderMessage() {
+    var mod = currentMod(), list = slotList();
+    var dayTxt = DAYS.filter(function (d) { return S.days.indexOf(d[0]) >= 0; }).map(function (d) { return d[1]; }).join(', ');
+    var slotTxt = list.filter(function (s) { return S.slots.indexOf(s.key) >= 0; }).map(function (s) { return s.label; }).join('; ');
+    var msg = [
+      'Olá, APEX! Vim pelo site e quero começar a treinar.',
+      'Nome: ' + (S.name.trim() || '—'),
+      'Modalidade: ' + (mod ? mod.name : '—'),
+      'Dias disponíveis: ' + (dayTxt || '—'),
+      'Horários de interesse: ' + (slotTxt || '—'),
+      'Nível: ' + (S.level || '—')
+    ].join('\n');
+    $('preview').textContent = msg;
+
+    var ready = !!(mod && S.days.length && S.level);
+    var send = $('send');
+    send.classList.toggle('disabled', !ready);
+    send.setAttribute('aria-disabled', ready ? 'false' : 'true');
+    send.href = ready ? 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg) : '#';
+    var falta = [];
+    if (!mod) falta.push('a modalidade');
+    if (!S.days.length) falta.push('os dias');
+    if (!S.level) falta.push('o nível');
+    $('missing').textContent = ready ? '' : 'Falta escolher ' + falta.join(', ') + '.';
+    $('missing').style.display = ready ? 'none' : 'block';
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
